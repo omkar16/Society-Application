@@ -2,4 +2,14 @@ h1{
     font-weight: bolder;
     color: white;
     cursor: pointer;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+a{
+    color:white;
+    cursor: pointer;
+}
+.userpanel{
+    text-align: right;
+    margin-right: 2%;
 }

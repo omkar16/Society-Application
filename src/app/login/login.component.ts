@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void{
     this.admin_service.postAdmin(this.logindata).subscribe(
       data=>{
-        console.log("res-->", data);
+        //console.log("res-->", data);
         if(data.email == undefined){
           alert("Please enter correct credentials..!")        
         }else {

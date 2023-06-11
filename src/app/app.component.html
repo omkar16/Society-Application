@@ -1,4 +1,11 @@
-<nav style="background-color:black; height: 50px;">
-    <div class="mygate"><h1 (click)="callLogin()">MyGate</h1></div>  
-  </nav>
+<nav style="background-color:black;">
+    <h1 (click)="callLogin()">MyGate</h1>
+    <div class="userpanel">
+        <a (click)="callLogin()">Admin</a>&nbsp;&nbsp;&nbsp;
+        <a (click)="callLogin()">Owner</a>&nbsp;&nbsp;&nbsp;
+        <a (click)="callLogin()">Tenant</a>&nbsp;&nbsp;&nbsp;
+        <a (click)="callLogin()">Guest</a>&nbsp;&nbsp;&nbsp;
+        <a (click)="callLogin()">Security</a>
+    </div>  
+</nav>
   <router-outlet></router-outlet>
