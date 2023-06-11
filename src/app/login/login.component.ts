@@ -28,12 +28,13 @@ export class LoginComponent implements OnInit {
     this.admin_service.postAdmin(this.logindata).subscribe(
       data=>{
         console.log("res-->", data);
-        if(data){
+        if(data.email == undefined){
+          alert("Please enter correct credentials..!")        
+        }else {
           this.logindata = data     
           alert("Welcome"+ data.firstname)
           this.router.navigate(['/dashboard'])
         }
-        //else console.log("Please enter correct credentials..!")
       }
     )
   }
