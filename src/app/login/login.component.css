@@ -1,0 +1,23 @@
+.form_style {
+    text-align: center;
+    width: 370px;
+    margin:20px auto;
+    border: solid black 2px;
+    border-radius: 2px;
+}
+.mygate{
+    color: white;
+    padding: 10px auto; 
+}
+.login_title{
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+form{
+    margin-top: 20px;
+}
+.form_style .login_title span{
+    margin-left: 20%;
+}

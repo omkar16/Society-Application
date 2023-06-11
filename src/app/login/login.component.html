@@ -1,0 +1,13 @@
+
+
+  <div class="form_style">
+    <div class="login_title"><span >Login</span></div>
+  <form name="form" #f="ngForm">
+    <label for="email">Email :</label>
+    <input type="text" name="email" id="email" [(ngModel)]="logindata.email" #email="ngModel" required><br>
+    <label for="password">Password :</label>
+    <input type="password" name="password" id="password" [(ngModel)]="logindata.password" #password="ngModel" required><br>
+    <input type="submit" (click)="onSubmit()" value="Submit">
+  
+  </form>
+  </div>
