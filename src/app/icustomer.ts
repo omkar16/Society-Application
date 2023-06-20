@@ -1,8 +1,8 @@
 export interface Icustomer {
-    id: number
-    firstname: string
-    lastname: string
     email: string
     password: string
+    firstName: string
+    lastName: string
     contact: string
+    token: string
 }

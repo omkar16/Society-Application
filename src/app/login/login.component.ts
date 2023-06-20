@@ -11,32 +11,27 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   logindata: Icustomer={
-    id: 0,
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    contact: ''
+    email:'' ,
+    password: '', 
+    firstName: '',
+    lastName: '',
+    contact: '',
+    token: ''
   }
   constructor(private admin_service:AdminserviceService, private router: Router) { }
 
   ngOnInit(): void {
-      
+
   }
 
-  onSubmit(): void{
-    this.admin_service.postAdmin(this.logindata).subscribe(
-      data=>{
-        //console.log("res-->", data);
-        if(data.email == undefined){
-          alert("Please enter correct credentials..!")        
-        }else {
-          this.logindata = data     
-          alert("Welcome"+ data.firstname)
-          this.router.navigate(['/dashboard'])
-        }
+  onSubmit(){
+    this.admin_service.loginAdmin(this.logindata).subscribe(
+      (data:Icustomer)=>{
+        this.logindata = data
+        console.log("Welcome "+this.logindata)
+        alert(this.logindata.firstName);
+        this.router.navigate(['/dashboard']);
       }
     )
   }
-
 }

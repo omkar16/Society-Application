@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminserviceService } from '../adminservice.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Icustomer } from '../icustomer';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,25 +11,26 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(
-    private admin_service: AdminserviceService, private router: Router
-  ) { }
+  admindata: Icustomer={
+    email:'' ,
+    password: '', 
+    firstName: '',
+    lastName: '',
+    contact: '',
+    token: ''
+  }
+
+  constructor(private admin_service: AdminserviceService, private router: Router) { 
+
+  }
 
   ngOnInit(): void {
  //   this.getProfile()
-  }
-
-  // getProfile(){
-  //   this.admin_service.getAdmin().subscribe(
-  //     data=>{
-  //       console.log("res-->", data);
-  //       if(data){     
-  //         alert("Welcome"+ data.email)
-  //         this.router.navigate(['/dashboard'])
-  //       }else console.log("Please enter correct credentials..!")
-  //     }
-  //   )
-
-  // }
+ this.admin_service.getAdmin().subscribe((data:Icustomer)=>{
+  this.admindata = data
+  alert(this.admindata.firstName)
+}
+)
+}
 
 }

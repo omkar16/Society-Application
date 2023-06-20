@@ -3,7 +3,7 @@
 
   <div class="form_style">
     <div class="login_title"><span >Login</span></div>
-  <form name="form" #f="ngForm">
+  <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
     
     <label for="email">Email :</label>
     <input type="text" name="email" id="email" [(ngModel)]="logindata.email" #email="ngModel" required><br>
@@ -15,7 +15,7 @@
     <div style="color:red" *ngIf="password.errors?.['required']&&(password.dirty||password.touched)">Password is Required</div>
     <div style="color:red" *ngIf="password.errors?.['minlength']||password.errors?.['maxlength']&&(password.dirty||password.touched)">Password should be atleast 6 and the max 15 characters long.</div>
 
-    <input type="submit" (click)="onSubmit()" value="Submit">
+    <button type="submit" [disabled]="!f.valid">Login</button>
   
   </form>
   </div>
